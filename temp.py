@@ -27,3 +27,24 @@ def transpose(m, matrix_dim, block_ix):
 def in_place_block_wise_kernel(m, matrix_dim):
     if block_id_x.x <= block.id_x.y:
         transpose(m, matrix_dim, block_id_x)
+
+
+# in-place?
+def transpose(matrix):
+    # Transpose O(N*N)
+    size = len(matrix)
+    for i in range(size):
+        for j in range(i+1, size):
+            matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+
+
+def sync_threads():
+    pass
+
+
+def get_src_ix(thread_id_x, block_id_x, matrix_dim):
+    pass
+
+
+def get_dst_ix(thread_id_x, block_id_x, matrix_dim):
+    pass
