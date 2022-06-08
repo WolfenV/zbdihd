@@ -82,7 +82,7 @@ if __name__ == "__main__":
     min_value = 1
     max_value = 10
     for n in range(5, 25, 1):
-        matrix_size = (10 * n, 10 * n)
+        matrix_size = (100 * n, 100 * n)
         matrix = np.random.randint(min_value, max_value, size = matrix_size)
         duration = transpose(matrix)
         duration_threads = transpose_threads(matrix)
